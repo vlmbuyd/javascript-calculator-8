@@ -67,7 +67,7 @@ const validateSeperator = (input) => {
 
   // [ERROR] 유효하지 않은 구분자 예외 처리
   [...convertedInput].forEach((item) => {
-    if (!Number(item) && !basicSeperator.has(item)) {
+    if (isNaN(Number(item)) && !basicSeperator.has(item)) {
       throw new Error(`[ERROR] 유효하지 않은 구분자가 포함되어 있습니다.`);
     }
   });
