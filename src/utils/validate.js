@@ -1,4 +1,4 @@
-import { DEFAULT_SEPERATOR, ERROR_MESSAGE } from "../constants.js";
+import { DEFAULT_SEPERATOR, ERROR_MESSAGE, NUMBER_SIGN } from "../constants.js";
 import convertToDefaultSeperator from "./parse.js";
 
 /**
@@ -15,7 +15,11 @@ const validateSeperator = (input) => {
 
   // [ERROR] (커스텀 구분자, 기본 구분자 외의) 유효하지 않은 구분자 예외 처리
   [...convertedInput].forEach((item) => {
-    if (isNaN(Number(item)) && item !== DEFAULT_SEPERATOR.COMMA) {
+    if (
+      isNaN(Number(item)) &&
+      item !== DEFAULT_SEPERATOR.COMMA &&
+      item !== NUMBER_SIGN.NEGATIVE
+    ) {
       throw new Error(ERROR_MESSAGE.INVALID_SEPERATOR);
     }
   });
