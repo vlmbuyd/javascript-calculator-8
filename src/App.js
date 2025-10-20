@@ -1,6 +1,6 @@
 import { Console } from "@woowacourse/mission-utils";
-import validateSeperator from "./inputProcessor.js";
-import calculateSum from "./calculateSum.js";
+import validateSeperator from "./utils/validate.js";
+import calculateSum from "./utils/calculate.js";
 import { DEFAULT_SEPERATOR, IO_MESSAGE } from "./constants.js";
 
 class App {
