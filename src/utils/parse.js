@@ -22,7 +22,7 @@ const convertToDefaultSeperator = (input) => {
 
     const customSeperator = input.slice(CUSTOM_SEPERATOR.START.length, nIdx); // 커스텀 구분자
 
-    const restInput = input.slice(nIdx + 2); // 커스텀 구분자 제거한 문자열
+    const restInput = input.slice(nIdx + CUSTOM_SEPERATOR.END.length); // 커스텀 구분자 제거한 문자열
 
     // 커스텀 구분자를 기본 구분자(,)로 치환
     convertedInput = restInput.replaceAll(
